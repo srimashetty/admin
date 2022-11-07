@@ -1,0 +1,264 @@
+@use '../assets/scss/utils' as *;
+
+.dashboard{
+  &__header{
+    font-size: 2.00rem; /*2.625rem = 42px */
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: bold;
+    color: map-get($colors, text, head);
+  
+      margin:30px 0 30px 20px;
+      @include responsive('large'){
+        margin:20px 0 30px 40px;
+        font-size: 2.63rem; /*2.625rem = 42px */
+      }
+  }
+  &__container{
+    &__row1{
+      display:flex;
+      flex-direction:column;
+      @include responsive('large'){
+        flex-direction:row;
+      }
+      &__left{
+        width:100%;
+        height:auto;
+        margin:20px auto;
+       // border:1px solid blue;
+        @include responsive('large'){
+          width:50%;
+          margin:20px 0;
+        }
+        &__status__card{
+       @include responsive('xxsmall'){
+         display:flex;
+         flex-wrap:wrap;
+         justify-content: space-around;
+       }
+       @include responsive('small'){
+         //712px 768px 800px
+         display:flex;
+         flex-wrap:wrap;
+         margin-left:20px;
+         margin-right:20px;
+         justify-content: space-evenly;
+       }
+       @include responsive('medium-l'){
+         // 912px
+         justify-content:space-around;
+         flex-wrap:wrap;
+         margin-left:auto;
+         margin-right:auto;
+       }
+       @include responsive('medium-ll'){
+         //1024px
+         justify-content:space-between;
+         margin-left:80px;
+         margin-right:80px;
+       }
+       @include responsive('large'){
+         //1280px
+         margin-left:auto;
+         margin-right:auto;
+         justify-content:space-around;
+       }
+      
+          &__data{
+           // border:1px solid violet;
+          
+            @include responsive('xxxsmall'){
+              //width i 412px 414px
+       
+              //background-color:lightcyan;
+             }
+             @include responsive('xxsmall'){
+             //width: 575px  485px
+              //background-color:grey;
+            }
+            @include responsive('xsmall'){
+              //widtth 600px 712px
+              //background-color:lightslategrey;
+            }
+            @include responsive('small'){
+              //background-color:lightyellow;
+            }
+          }
+        }
+      }
+
+      &__right{
+        width:100%;
+        height:auto;
+        margin:20px auto;
+        //border:1px solid black;
+        @include responsive('large'){
+          width:50%;
+          margin:20px 0;
+        }
+        &__card__area{
+          margin:30px auto;
+          width:calc(100% - 20px);
+          height:auto;
+          border-radius:map-get($radius, radius2);
+          border:2px solid map-get($colors, icon, dark);
+          @include responsive('small'){
+            width:calc(100% - 40px);
+          }
+          @include responsive('medium'){
+            width:calc(100% - 100px);
+          }
+          @include responsive('medium-l'){
+            width:calc(100% - 120px);
+          }
+          @include responsive('large'){
+          height:auto;
+            margin:30px auto;
+            padding:40px 30px 40px 20px;
+          //  border:1px solid blue;
+            width:calc(100% - 60px);
+          }
+          &__content{
+            border:transparent;
+            width:calc(100% - 20px);
+            @include responsive('small'){
+              width:calc(100% - 40px);
+            }
+            @include responsive('medium'){
+              width:calc(100% - 100px);
+            }
+            @include responsive('medium-l'){
+              width:calc(100% - 120px);
+            }
+            @include responsive('large'){
+              height:100%;
+              width:100%;
+            }
+          }
+        }
+      }
+
+    }
+
+    &__row2{
+      display:flex;
+      flex-direction:column;
+      @include responsive('large'){
+        flex-direction:row;
+      }
+      &__left{
+        width:100%;
+        height:auto;
+        
+        @include responsive('large'){
+          width:50%;
+          margin:20px 0;
+        }
+        &__table{
+          width:calc(100% - 20px);
+          margin:10px auto 30px auto;
+        padding:20px 20px;
+        border-radius: map-get($radius, radius2);
+        border:1px solid map-get($colors, icon, dark);
+        @include responsive('xxxxsmall'){
+          width:calc(100% - 20px);
+        }
+        @include responsive('xxxsmall'){
+          width:calc(100% - 40px);
+        }
+        @include responsive('xsmall'){
+          width:calc(100% - 60px);
+        }
+        
+         &__header{
+          color:map-get($colors, text, head);
+          text-transform:capitalize;
+          padding:5px 0 0px 0px;
+          border-bottom:1px solid map-get($colors, icon, dark);
+        }
+        &__body{
+          margin-top:20px;
+          padding:0 auto;
+        }
+        &__footer{
+          text-align: center;
+          text-transform: capitalize;
+          padding-top: 20px;
+          font-weight:600;
+          border-top:1px solid map-get($colors, icon, dark);
+          color:map-get($colors, text, primary);
+        }
+        }
+       
+      }
+
+      &__right{
+        width:100%;
+        height:auto;
+        @include responsive('large'){
+          width:50%;
+          margin:20px 0;
+        }
+        &__table{
+          width:calc(100% - 10px);
+          margin:10px auto 30px auto;
+        padding:20px 20px;
+        border-radius: map-get($radius, radius2);
+        border:1px solid map-get($colors, icon, dark);
+        @include responsive('xxxxsmall'){
+          width:calc(100% - 20px);
+        }
+        @include responsive('xxxsmall'){
+          width:calc(100% - 40px);
+        }
+        @include responsive('xsmall'){
+          width:calc(100% - 60px);
+        }
+         &__header{
+          color:map-get($colors, text, head);
+          text-transform:capitalize;
+          padding:5px 0 0px 0px;
+          border-bottom:1px solid map-get($colors, icon, dark);
+        }
+        &__body{
+          margin-top:20px;
+          padding:0 auto;
+        }
+        &__footer{
+          text-align: center;
+          text-transform: capitalize;
+          padding-top: 20px;
+          font-weight:600;
+          border-top:1px solid map-get($colors, icon, dark);
+          color:map-get($colors, text, primary);
+        }
+        }
+      }
+
+    }
+
+  }
+
+}
+.apexcharts-canvas{
+  width:100%;
+  height:100%;
+  position:relative;
+  height:max-content;
+  border:transparent;
+}
+
+.card{
+  border:none;
+}
+
+
+tr th.table2__head:nth-child(2),
+tr th.table2__head:nth-child(3),
+tr td.table2__price,
+tr td.table2__date{
+  display:none;
+  @include responsive('xsmall'){
+    display:table-cell;
+  }
+}

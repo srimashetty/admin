@@ -1,0 +1,109 @@
+@use "../../assets/scss/utils" as *;
+
+.status__card{
+  display:flex;
+  flex-wrap:wrap;
+  overflow:hidden;
+  position: relative;
+  margin:20px auto;
+  width:calc(100% - 30px);
+  padding:20px;
+  background-color:map-get($colors, background, light);
+  border:1px solid map-get($colors, icon, dark);
+  box-shadow:map-get($shadows, lightShadow);
+  border-radius:map-get($radius, radius2);
+  transition:color 0.5s ease 0s;
+
+  @include responsive('xxxsmall'){
+    width:200px;
+  }
+  @include responsive('xxsmall'){
+    width:220px;
+  }
+  @include responsive('small'){
+    //712px 768px
+    min-width:220px;
+  }
+  @include responsive('medium'){
+    //800px
+    min-width:240px;
+  }
+  @include responsive('medium-l'){
+    min-width:250px;
+  }
+  @include responsive('medium-ll'){
+    min-width:250px;
+  }
+  @include responsive('large'){
+    max-width:160px;
+    min-width:140px;
+  }
+
+  &__title{
+    width:100%;
+    margin-bottom:20px;
+    z-index:1;
+    span{
+      font-size: 1rem;
+      &:hover::before{
+        display:block;
+        z-index: 30;
+      }
+    }
+  }
+  &__info{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1;
+    &__count{
+      height:auto;
+      h4{
+        margin:0;
+        padding:0;
+        @include responsive('large'){
+          font-size:2.2rem;
+          margin-top:4px;
+        }
+      }
+    }
+    &__icon{
+      margin:0;
+      padding:0;
+      i{
+        margin:0;
+        padding:0;
+        font-size:1.8rem;
+        width:auto;
+        @include responsive('large'){
+          font-size:2.5rem;
+        }
+      }
+
+    }
+  }
+
+  &:before{
+    content:"";
+    width:100%;
+    padding-top: 100%;
+    border-radius:50%;
+    background-image:linear-gradient(to top right, map-get($colors, background, darkBlue), map-get($colors, background, hoverBlue));
+    position:absolute;
+    left:-50%;
+    top:0;
+    transform:scale(0);
+    transition:transform 0.8s ease 0s;
+    color:map-get($colors, text, light);
+  }
+  &:hover{
+    color:map-get($colors, text, light);
+    box-shadow:2px -4px 0 map-get($colors, background, hoverBlue);
+    &::before{
+      transform:scale(3);
+      color:map-get($colors, text, light);
+    }
+  }
+}

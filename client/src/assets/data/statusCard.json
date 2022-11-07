@@ -1,0 +1,22 @@
+[
+    {
+      "title": "Total Applications",
+      "count": "1108",
+      "icon": "bx bx-dollar-circle"
+    },
+    {
+      "title": "New Applications",
+      "icon": "bx bx-purchase-tag",
+      "count": "0"
+    },
+    {
+      "title": "Users completed KYC today",
+      "icon": "bx bx-user-pin",
+      "count": "0"
+    },
+    {
+      "icon": "bx bx-receipt",
+      "count": "0",
+      "title": "Users who failed quality check today"
+    }
+  ]
